@@ -6,10 +6,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_logo_attrec"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_logo_attrec"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttrecMaster">
-        <activity android:name=".IntermedioActivity"></activity>
+        <activity android:name=".ListadoEstudiantesActivity"></activity>
+        <activity android:name=".IntermedioActivity" />
         <activity android:name=".AddRegistroActivity" />
         <activity
             android:name=".MainActivity"
