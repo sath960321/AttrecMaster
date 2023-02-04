@@ -46,6 +46,7 @@ public class IntermedioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentListadoEstudiantes = new Intent(IntermedioActivity.this, ListadoEstudiantesActivity.class);
+                intentListadoEstudiantes.putExtra("ID", id);
                 startActivity(intentListadoEstudiantes);
             }
         }
