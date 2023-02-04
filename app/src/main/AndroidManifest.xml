@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttrecMaster">
-        <activity android:name=".AddRegistroActivity"></activity>
+        <activity android:name=".IntermedioActivity"></activity>
+        <activity android:name=".AddRegistroActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

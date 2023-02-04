@@ -2,6 +2,7 @@ package com.example.attrecmaster.adaptadores;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.attrecmaster.IntermedioActivity;
 import com.example.attrecmaster.R;
 import com.example.attrecmaster.clases.Registro;
 
@@ -56,6 +58,16 @@ public class ListRegistroAdapter extends RecyclerView.Adapter<ListRegistroAdapte
             viewGrupo = itemView.findViewById(R.id.txtGrupo);
             viewAnio = itemView.findViewById(R.id.txtAnio);
             viewFacultad = itemView.findViewById(R.id.txtFacultad);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intentIntermedio = new Intent(context, IntermedioActivity.class);
+                    intentIntermedio.putExtra("ID", listaRegistro.get(getAdapterPosition()).getId_registro());
+                    context.startActivity(intentIntermedio);
+                }
+            });
         }
     }
 }
