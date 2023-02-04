@@ -9,4 +9,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="redcard">#CF706E</color>
+    <color name="bluecard">#8AE6FF</color>
 </resources>
