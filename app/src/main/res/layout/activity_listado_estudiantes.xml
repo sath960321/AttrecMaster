@@ -127,6 +127,7 @@
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
         android:layout_marginTop="8dp"
+        tools:listitem="@layout/activity_item_estudiantes"
         app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEstudiante" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
