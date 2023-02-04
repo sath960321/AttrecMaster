@@ -10,4 +10,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="redcard">#CF706E</color>
     <color name="bluecard">#8AE6FF</color>
+    <color name="savebutton">#50D25E</color>
+    <color name="savecontinuebutton">#525DFF</color>
 </resources>

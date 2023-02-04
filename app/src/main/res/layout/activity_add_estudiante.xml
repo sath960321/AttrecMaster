@@ -4,96 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRegistroActivity">
+    tools:context=".AddEstudianteActivity">
 
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/textviewaddEstudiante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:layout_marginTop="12dp"
-        android:text="Añadir Registro"
+        android:text="Añadir Estudiante"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/InputLayoutAsignatura"
+        android:id="@+id/InputLayoutNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Asignatura"
+        android:hint="Nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_second">
+        app:layout_constraintTop_toBottomOf="@+id/textviewaddEstudiante">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextAsignatura"
+            android:id="@+id/EditTextNombreEstudiante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/InputLayoutGrupo"
+        android:id="@+id/InputLayoutCIEstudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Grupo"
+        android:hint="CI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InputLayoutAsignatura">
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutNombre">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextGrupo"
+            android:id="@+id/EditTextCIEstudiante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/InputLayoutAnio"
+        android:id="@+id/InputLayoutSexoEstudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Año"
+        android:hint="Sexo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InputLayoutGrupo">
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutCIEstudiante">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextAnio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/InputLayoutFacultad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:hint="Facultad"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InputLayoutAnio">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextFacultad"
+            android:id="@+id/EditTextSexoEstudiante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/insertRegistroBtn"
+        android:id="@+id/insertEstudianteBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -104,9 +86,21 @@
         android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InputLayoutFacultad" />
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutSexoEstudiante" />
 
 
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/insertEstudianteContinuarBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="10dp"
+        android:backgroundTint="@color/savecontinuebutton"
+        android:text="Salvar y seguir añadiendo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insertEstudianteBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
