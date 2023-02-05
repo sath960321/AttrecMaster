@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvRegistro"
+        android:id="@+id/cvRegistroEstudiantes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingRight="12dp"
@@ -24,7 +24,7 @@
             android:layout_marginTop="4dp"
             android:background="@drawable/rectangle_utilities">
             <TextView
-                android:id="@+id/idenAsign"
+                android:id="@+id/idenEstu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="1"

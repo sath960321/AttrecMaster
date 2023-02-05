@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.attrecmaster" >
+    package="com.example.attrecmaster">
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_logo_attrec"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AttrecMaster" >
-        <activity android:name=".AddEvaluacionActivity" >
-        </activity>
+        android:theme="@style/Theme.AttrecMaster">
+        <activity android:name=".AddAsistenciaActivity"></activity>
+        <activity android:name=".AddEvaluacionActivity"></activity>
         <activity android:name=".ListadoEvaluacionActivity" />
         <activity android:name=".ListadoAsistenciasActivity" />
         <activity android:name=".AddEstudianteActivity" />
@@ -19,7 +19,7 @@
         <activity android:name=".AddRegistroActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -19,7 +19,7 @@ public class ListadoAsistenciasActivity extends AppCompatActivity {
     TextView tvListadoAsistenciasInstancia, viewAsign2, viewGrupo2, viewAnio2, viewFacultad2;;
     FloatingActionButton fabAddAsistencias;
     Registro registro1;
-    Integer id = 0;
+    int id = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,15 @@ public class ListadoAsistenciasActivity extends AppCompatActivity {
             viewAnio2.setText("Año: "+registro1.getAnio());
             viewFacultad2.setText("Facultad: "+registro1.getFacultad());
         }
+
+        fabAddAsistencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentAddAsistencias = new Intent(ListadoAsistenciasActivity.this, AddAsistenciaActivity.class);
+                intentAddAsistencias.putExtra("ID", id);
+                startActivity(intentAddAsistencias);
+            }
+        });
 
     }
 

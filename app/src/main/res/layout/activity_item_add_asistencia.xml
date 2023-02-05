@@ -4,8 +4,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvRegistroAddEvaluacion"
+        android:id="@+id/cvRegistroAddAsistencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingRight="12dp"
@@ -24,7 +25,7 @@
                 android:layout_marginTop="4dp"
                 android:background="@drawable/rectangle_utilities">
                 <TextView
-                    android:id="@+id/idenEstu1"
+                    android:id="@+id/idenEstu2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="1"
@@ -65,7 +66,7 @@
                             android:padding="6dp">
 
                             <ImageView
-                                android:id="@+id/ImgEstudiante"
+                                android:id="@+id/ImgEstudiante2"
                                 android:layout_width="41dp"
                                 android:layout_height="41dp"
                                 android:layout_gravity="center"
@@ -83,7 +84,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/txtNombre1"
+                                android:id="@+id/txtNombre2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Nombre"
@@ -92,7 +93,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txtCI1"
+                                android:id="@+id/txtCI2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="CI"
@@ -101,7 +102,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txtSexo1"
+                                android:id="@+id/txtSexo2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Sexo"
@@ -120,7 +121,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginTop="6dp">
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/InputLayoutValorEvaluacion"
+                        android:id="@+id/InputLayoutEstadoAsistencia"
                         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -128,7 +129,7 @@
                         android:hint="Valor">
 
                         <AutoCompleteTextView
-                            android:id="@+id/EditTextValorEvaluacion"
+                            android:id="@+id/EditTextEstadoAsistencia"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingBottom="50dp"/>
