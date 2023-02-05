@@ -59,7 +59,7 @@
                         android:gravity="center"
                         android:padding="6dp"
                         android:layout_margin="6dp"
-                        android:background="@drawable/circle_utilities">
+                        android:background="@drawable/white_circle_utilities">
                         <ImageView
                             android:id="@+id/ImgEstudiante"
                             android:layout_width="61dp"

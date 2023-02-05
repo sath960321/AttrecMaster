@@ -42,6 +42,15 @@ public class IntermedioActivity extends AppCompatActivity {
             id = (int) savedInstanceState.getSerializable("ID");
         }
 
+        cardViewAsistencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentListadoAsistencias = new Intent(IntermedioActivity.this, ListadoAsistenciasActivity.class);
+                intentListadoAsistencias.putExtra("ID", id);
+                startActivity(intentListadoAsistencias);
+            }
+        });
+
         cardViewListado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
