@@ -11,11 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.attrecmaster.clases.Registro;
+import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListadoEstudiantesActivity extends AppCompatActivity {
-    TextView tvListadoEstudiantesInstancia;
+    TextView tvListadoEstudiantesInstancia, viewAsign1, viewGrupo1, viewAnio1, viewFacultad1;
     FloatingActionButton fabAddEstudiantes;
+    Registro registro1;
     int id = 0;
 
     @Override
@@ -24,6 +27,10 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listado_estudiantes);
 
         tvListadoEstudiantesInstancia = findViewById(R.id.tvListadoEstudiantesInstancia);
+        viewAsign1 = findViewById(R.id.viewAsign1);
+        viewGrupo1 = findViewById(R.id.viewGrupo1);
+        viewAnio1 = findViewById(R.id.viewAnio1);
+        viewFacultad1 = findViewById(R.id.viewFacultad1);
         fabAddEstudiantes = findViewById(R.id.fabAddEstudiantes);
 
         if (savedInstanceState == null) {
@@ -38,6 +45,17 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
         } else {
             id = (int) savedInstanceState.getSerializable("ID");
         }
+
+        registroModel registroModelBDVer = new registroModel(this);
+        registro1 = registroModelBDVer.verRegistro(id);
+
+        if (registro1 != null){
+            viewAsign1.setText("Asignatura: "+registro1.getAsignatura());
+            viewGrupo1.setText("Grupo: "+registro1.getGrupo());
+            viewAnio1.setText("Año: "+registro1.getAnio());
+            viewFacultad1.setText("Facultad: "+registro1.getFacultad());
+        }
+
 
         fabAddEstudiantes.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -40,6 +40,24 @@ public class registroModel extends DBConection {
         return listaRegistro;
     }
 
+    public Registro verRegistro(int id){
+        DBConection conex = new DBConection(context);
+        SQLiteDatabase db = conex.getWritableDatabase();
+        Registro registro = null;
+        Cursor cursorRegistro;
+        cursorRegistro = db.rawQuery("SELECT * FROM "+ TABLE_REGISTRO + " WHERE idregistro = "+ id + " LIMIT 5", null);
+        if (cursorRegistro.moveToFirst()){
+            registro = new Registro();
+            registro.setId_registro(cursorRegistro.getInt(0));
+            registro.setAsignatura(cursorRegistro.getString(1));
+            registro.setGrupo(cursorRegistro.getString(2));
+            registro.setAnio(cursorRegistro.getString(3));
+            registro.setFacultad(cursorRegistro.getInt(4));
+        }
+        cursorRegistro.close();
+        return registro;
+    }
+
     public long insertarRegistro(String asignatura, String grupo, String anio, String facultad) {
         long id = 0;
         try {

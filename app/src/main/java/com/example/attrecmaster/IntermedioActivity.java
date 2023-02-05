@@ -12,9 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.attrecmaster.clases.Registro;
+import com.example.attrecmaster.db.registroModel;
+
 public class IntermedioActivity extends AppCompatActivity {
     CardView cardViewAsistencia, cardViewEvaluaciones, cardViewListado, cardViewReporte;
-    TextView textView;
+    TextView textView, viewAsign, viewGrupo, viewAnio, viewFacultad;
+    Registro registro1;
     int id = 0;
 
     @Override
@@ -23,6 +27,10 @@ public class IntermedioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intermedio);
 
         textView = findViewById(R.id.textView);
+        viewAsign = findViewById(R.id.viewAsign);
+        viewGrupo = findViewById(R.id.viewGrupo);
+        viewAnio = findViewById(R.id.viewAnio);
+        viewFacultad = findViewById(R.id.viewFacultad);
         cardViewAsistencia = findViewById(R.id.cardViewAsistencia);
         cardViewEvaluaciones = findViewById(R.id.cardViewEvaluaciones);
         cardViewListado = findViewById(R.id.cardViewListado);
@@ -41,6 +49,18 @@ public class IntermedioActivity extends AppCompatActivity {
         } else {
             id = (int) savedInstanceState.getSerializable("ID");
         }
+
+        registroModel registroModelBDVer = new registroModel(this);
+        registro1 = registroModelBDVer.verRegistro(id);
+
+        if (registro1 != null){
+          viewAsign.setText("Asignatura: "+registro1.getAsignatura());
+          viewGrupo.setText("Grupo: "+registro1.getGrupo());
+          viewAnio.setText("Año: "+registro1.getAnio());
+          viewFacultad.setText("Facultad: "+registro1.getFacultad());
+        }
+
+
 
         cardViewAsistencia.setOnClickListener(new View.OnClickListener() {
             @Override
