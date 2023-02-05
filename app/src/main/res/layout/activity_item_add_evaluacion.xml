@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="12dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rectangle_utilities">
+                <TextView
+                    android:id="@+id/idenEstu1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="1"
+                    android:textSize="31sp"
+                    android:textStyle="bold"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="4dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="6dp"
+                    android:backgroundTint="@color/redcard"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingRight="64dp">
+
+                        <LinearLayout
+                            android:layout_width="41dp"
+                            android:layout_height="41dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/white_circle_utilities"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="6dp">
+
+                            <ImageView
+                                android:id="@+id/ImgEstudiante"
+                                android:layout_width="41dp"
+                                android:layout_height="41dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="12dp"
+                                android:src="@drawable/ic_icono_de_estudiantes" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtNombre1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Nombre"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCI1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="CI"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtSexo1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Sexo"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/InputLayoutValorEvaluacion"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:foreground="@drawable/redcardview"
+                        android:hint="Valor">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/EditTextValorEvaluacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="50dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

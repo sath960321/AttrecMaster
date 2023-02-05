@@ -2,7 +2,9 @@ package com.example.attrecmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.attrecmaster.clases.Registro;
@@ -50,5 +52,14 @@ public class ListadoEvaluacionActivity extends AppCompatActivity {
             viewAnio3.setText("Año: "+registro1.getAnio());
             viewFacultad3.setText("Facultad: "+registro1.getFacultad());
         }
+
+        fabAddEvaluacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentAddEvaluacion = new Intent(ListadoEvaluacionActivity.this, AddEvaluacionActivity.class);
+                intentAddEvaluacion.putExtra("ID", id);
+                startActivity(intentAddEvaluacion);
+            }
+        });
     }
 }
