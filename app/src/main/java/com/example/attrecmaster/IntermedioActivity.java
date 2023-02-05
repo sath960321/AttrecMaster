@@ -71,6 +71,15 @@ public class IntermedioActivity extends AppCompatActivity {
             }
         });
 
+        cardViewEvaluaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentListadoEvaluaciones = new Intent(IntermedioActivity.this, ListadoEvaluacionActivity.class);
+                intentListadoEvaluaciones.putExtra("ID", id);
+                startActivity(intentListadoEvaluaciones);
+            }
+        });
+
         cardViewListado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
