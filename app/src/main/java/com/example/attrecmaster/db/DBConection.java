@@ -53,6 +53,12 @@ public class DBConection extends SQLiteOpenHelper {
                 "fecha TEXT NOT NULL," +
                 "tipo TEXT NOT NULL," +
                 "valor TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_REGISTRO_CONTROL +  "(" +
+                "idregistroControl INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "idregistro INTEGER NOT NULL," +
+                "idestudiante INTEGER NOT NULL," +
+                "idevaluacion INTEGER NOT NULL," +
+                "idasistencia INTEGER NOT NULL)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTADO +  "(" +
                 "idestado INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "estado TEXT NOT NULL)");
@@ -67,6 +73,7 @@ public class DBConection extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ESTUDIANTES);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ASISTENCIA);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_EVALUACION);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_REGISTRO_CONTROL);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ESTADO);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_TIPO);
         onCreate(sqLiteDatabase);
