@@ -120,17 +120,24 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEstudiante">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListadoEstudiantes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:padding="5dp"
-        android:scrollX="1dp"
-        android:verticalScrollbarPosition="right"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEstudiante"
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/activity_item_estudiantes" />
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddEstudiantes"
@@ -142,7 +149,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvListadoEstudiantes"
         app:layout_constraintVertical_bias="0.981"
         app:rippleColor="@color/white"
         app:srcCompat="@android:drawable/ic_input_add" />

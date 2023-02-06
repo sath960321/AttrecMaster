@@ -171,16 +171,22 @@
         android:layout_height="wrap_content"/>
   </com.google.android.material.textfield.TextInputLayout>
 
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="6dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginRight="6dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/InputLayoutTipoEvaluacion">
+
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rvTipoEvaluacion"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:padding="5dp"
-      android:layout_marginLeft="6dp"
-      android:layout_marginRight="6dp"
-      android:layout_marginTop="8dp"
-      tools:listitem="@layout/activity_item_add_evaluacion"
-      app:layout_constraintTop_toBottomOf="@+id/InputLayoutTipoEvaluacion" />
-
+      tools:listitem="@layout/activity_item_add_evaluacion" />
+  </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

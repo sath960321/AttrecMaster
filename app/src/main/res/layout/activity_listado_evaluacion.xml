@@ -119,16 +119,23 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEvaluaciones">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListadoEvaluacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="8dp"
-        tools:listitem="@layout/activity_item_evaluacion"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEvaluaciones" />
+        tools:listitem="@layout/activity_item_evaluacion" />
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddEvaluacion"
@@ -140,7 +147,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvListadoEvaluacion"
         app:layout_constraintVertical_bias="0.981"
         app:rippleColor="@color/white"
         app:srcCompat="@android:drawable/ic_input_add" />
