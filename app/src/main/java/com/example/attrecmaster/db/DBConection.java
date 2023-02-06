@@ -34,37 +34,37 @@ public class DBConection extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_REGISTRO +  "(" +
                 "idregistro INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "asignatura TEXT NOT NULL," +
-                "grupo TEXT NOT NULL," +
-                "anio TEXT NOT NULL," +
-                "facultad TEXT NOT NULL)");
+                "asignatura TEXT," +
+                "grupo TEXT," +
+                "anio TEXT," +
+                "facultad TEXT)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTUDIANTES +  "(" +
                 "idestudiante INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "nombre TEXT NOT NULL," +
-                "ci TEXT NOT NULL," +
-                "sexo TEXT NOT NULL)");
+                "nombre TEXT," +
+                "ci TEXT," +
+                "sexo TEXT)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ASISTENCIA +  "(" +
                 "idasistencia INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "fecha TEXT NOT NULL," +
-                "estado TEXT NOT NULL," +
-                "anio TEXT NOT NULL)");
+                "fecha TEXT," +
+                "estado TEXT," +
+                "anio TEXT)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_EVALUACION +  "(" +
                 "idevaluacion INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "fecha TEXT NOT NULL," +
-                "tipo TEXT NOT NULL," +
-                "valor TEXT NOT NULL)");
+                "fecha TEXT," +
+                "tipo TEXT," +
+                "valor TEXT)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_REGISTRO_CONTROL +  "(" +
                 "idregistroControl INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "idregistro INTEGER NOT NULL," +
-                "idestudiante INTEGER NOT NULL," +
-                "idevaluacion INTEGER NOT NULL," +
-                "idasistencia INTEGER NOT NULL)");
+                "idregistro INTEGER," +
+                "idestudiante INTEGER," +
+                "idevaluacion INTEGER," +
+                "idasistencia INTEGER)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTADO +  "(" +
                 "idestado INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "estado TEXT NOT NULL)");
+                "estado TEXT)");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_TIPO +  "(" +
                 "id_tipoEvaluacion INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "tipo TEXT NOT NULL)");
+                "tipo TEXT)");
     }
 
     @Override
