@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.example.attrecmaster.clases.Estudiante;
 import com.example.attrecmaster.clases.Registro;
 
 import java.util.ArrayList;
@@ -104,5 +105,26 @@ public class registroModel extends DBConection {
             ex.toString();
         }
         return id;
+    }
+
+    public ArrayList<Estudiante> mostrarEstudianteRegistro(int id){
+        DBConection conex = new DBConection(context);
+        SQLiteDatabase db = conex.getWritableDatabase();
+        Estudiante estudiante = null;
+        ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+        Cursor cursorEstudiante;
+        cursorEstudiante = db.rawQuery("SELECT rgc.idregistroControl, rgc.idregistro, es.idestudiante, es.nombre, es.ci, es.sexo FROM registro_control rgc LEFT JOIN estudiantes es ON(rgc.idestudiante = es.idestudiante) WHERE rgc.idregistro = "+ id + " LIMIT 5", null);
+        if (cursorEstudiante.moveToFirst()){
+            do {
+                estudiante = new Estudiante();
+                estudiante.setIdestudiante(cursorEstudiante.getInt(2));
+                estudiante.setNombre(cursorEstudiante.getString(3));
+                estudiante.setCi(cursorEstudiante.getString(4));
+                estudiante.setSexo(cursorEstudiante.getString(5));
+                listaEstudiantes.add(estudiante);
+            } while (cursorEstudiante.moveToNext());
+        }
+        cursorEstudiante.close();
+        return listaEstudiantes;
     }
 }

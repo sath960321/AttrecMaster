@@ -1,6 +1,8 @@
 package com.example.attrecmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.attrecmaster.adaptadores.ListEstudiantesAdapter;
+import com.example.attrecmaster.clases.Estudiante;
 import com.example.attrecmaster.clases.Registro;
 import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,7 +22,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class ListadoEstudiantesActivity extends AppCompatActivity {
     TextView tvListadoEstudiantesInstancia, viewAsign1, viewGrupo1, viewAnio1, viewFacultad1;
     FloatingActionButton fabAddEstudiantes;
+    RecyclerView rvListadoEstudiantes;
     Registro registro1;
+    Estudiante estudiante1;
     int id = 0;
 
     @Override
@@ -32,6 +38,7 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
         viewAnio1 = findViewById(R.id.viewAnio1);
         viewFacultad1 = findViewById(R.id.viewFacultad1);
         fabAddEstudiantes = findViewById(R.id.fabAddEstudiantes);
+        rvListadoEstudiantes = findViewById(R.id.rvListadoEstudiantes);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -55,6 +62,10 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
             viewAnio1.setText("Año: "+registro1.getAnio());
             viewFacultad1.setText("Facultad: "+registro1.getFacultad());
         }
+
+        rvListadoEstudiantes.setLayoutManager(new LinearLayoutManager(this));
+        ListEstudiantesAdapter adapter = new ListEstudiantesAdapter(this, R.layout.activity_item_estudiantes, registroModelBDVer.mostrarEstudianteRegistro(id));
+        rvListadoEstudiantes.setAdapter(adapter);
 
 
         fabAddEstudiantes.setOnClickListener(new View.OnClickListener() {

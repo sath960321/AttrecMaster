@@ -37,6 +37,7 @@ public class ListEstudiantesAdapter extends RecyclerView.Adapter<ListEstudiantes
 
     @Override
     public void onBindViewHolder(@NonNull EstudiantesViewHolder holder, int position) {
+        holder.idenEstu.setText(String.valueOf(listaEstudiante.get(position).getIdestudiante()));
         holder.txtNombre.setText(listaEstudiante.get(position).getNombre());
         holder.txtCI.setText(listaEstudiante.get(position).getCi());
         holder.txtSexo.setText(listaEstudiante.get(position).getSexo());
@@ -48,10 +49,11 @@ public class ListEstudiantesAdapter extends RecyclerView.Adapter<ListEstudiantes
     }
 
     public class EstudiantesViewHolder extends RecyclerView.ViewHolder {
-        TextView txtNombre, txtCI, txtSexo;
+        TextView idenEstu, txtNombre, txtCI, txtSexo;
 
         public EstudiantesViewHolder(@NonNull View itemView) {
             super(itemView);
+            idenEstu = itemView.findViewById(R.id.idenEstu);
             txtNombre = itemView.findViewById(R.id.txtNombre);
             txtCI = itemView.findViewById(R.id.txtCI);
             txtSexo = itemView.findViewById(R.id.txtSexo);
