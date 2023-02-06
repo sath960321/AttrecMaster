@@ -9,17 +9,26 @@
         android:roundIcon="@drawable/ic_logo_attrec"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttrecMaster">
-        <activity android:name=".AddAsistenciaActivity"></activity>
-        <activity android:name=".AddEvaluacionActivity"></activity>
-        <activity android:name=".ListadoEvaluacionActivity" />
-        <activity android:name=".ListadoAsistenciasActivity" />
-        <activity android:name=".AddEstudianteActivity" />
-        <activity android:name=".ListadoEstudiantesActivity" />
-        <activity android:name=".IntermedioActivity" />
-        <activity android:name=".AddRegistroActivity" />
+        <activity android:name=".AddAsistenciaActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".AddEvaluacionActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ListadoEvaluacionActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ListadoAsistenciasActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AddEstudianteActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ListadoEstudiantesActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".IntermedioActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AddRegistroActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
