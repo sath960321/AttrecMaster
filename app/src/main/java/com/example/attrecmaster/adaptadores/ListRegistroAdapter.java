@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +39,7 @@ public class ListRegistroAdapter extends RecyclerView.Adapter<ListRegistroAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RegistroViewHolder holder, int position) {
+        holder.idenAsign.setText(String.valueOf(listaRegistro.get(position).getAsignatura().charAt(0)));
         holder.viewAsignatura.setText(listaRegistro.get(position).getAsignatura());
         holder.viewGrupo.setText(listaRegistro.get(position).getGrupo());
         holder.viewAnio.setText(listaRegistro.get(position).getAnio());
@@ -50,10 +52,11 @@ public class ListRegistroAdapter extends RecyclerView.Adapter<ListRegistroAdapte
     }
 
     public class RegistroViewHolder extends RecyclerView.ViewHolder {
-        TextView viewAsignatura, viewGrupo, viewAnio, viewFacultad;
+        TextView idenAsign, viewAsignatura, viewGrupo, viewAnio, viewFacultad;
 
         public RegistroViewHolder(@NonNull View itemView) {
             super(itemView);
+            idenAsign = itemView.findViewById(R.id.idenAsign);
             viewAsignatura = itemView.findViewById(R.id.txtAsign);
             viewGrupo = itemView.findViewById(R.id.txtGrupo);
             viewAnio = itemView.findViewById(R.id.txtAnio);
@@ -66,6 +69,14 @@ public class ListRegistroAdapter extends RecyclerView.Adapter<ListRegistroAdapte
                     Intent intentIntermedio = new Intent(context, IntermedioActivity.class);
                     intentIntermedio.putExtra("ID", listaRegistro.get(getAdapterPosition()).getId_registro());
                     context.startActivity(intentIntermedio);
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    Toast.makeText(context, "FUNCIONA EL PRESIONADO", Toast.LENGTH_LONG).show();
+                    return false;
                 }
             });
         }
