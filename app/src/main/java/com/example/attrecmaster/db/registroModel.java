@@ -74,4 +74,35 @@ public class registroModel extends DBConection {
         }
         return id;
     }
+
+    public long insertarEstudiante(String nombre, String ci, String sexo) {
+        long id = 0;
+        try {
+            DBConection conex = new DBConection(context);
+            SQLiteDatabase db = conex.getWritableDatabase();
+            ContentValues values1 = new ContentValues();
+            values1.put("nombre", nombre);
+            values1.put("ci", ci);
+            values1.put("sexo", sexo);
+            id = db.insert(TABLE_ESTUDIANTES, null, values1);
+        } catch (Exception ex) {
+            ex.toString();
+        }
+        return id;
+    }
+
+    public long insertarRegistroEstudiante(long idEstudiante, Integer idregistro) {
+        long id = 0;
+        try {
+            DBConection conex = new DBConection(context);
+            SQLiteDatabase db = conex.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("idEstudiante", idEstudiante);
+            values.put("idregistro", idregistro);
+            id = db.insert(TABLE_REGISTRO_CONTROL, null, values);
+        } catch (Exception ex) {
+            ex.toString();
+        }
+        return id;
+    }
 }

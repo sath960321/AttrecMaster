@@ -3,7 +3,7 @@ package com.example.attrecmaster.clases;
 public class Estudiante {
     private int idestudiante;
     private String nombre;
-    private Integer ci;
+    private String ci;
     private String sexo;
 
     public Estudiante() {
@@ -29,11 +29,11 @@ public class Estudiante {
         this.nombre = nombre;
     }
 
-    public Integer getCi() {
+    public String getCi() {
         return ci;
     }
 
-    public void setCi(Integer ci) {
+    public void setCi(String ci) {
         this.ci = ci;
     }
 

@@ -61,6 +61,7 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentAddEstudiante = new Intent(ListadoEstudiantesActivity.this, AddEstudianteActivity.class);
+                intentAddEstudiante.putExtra("ID", id);
                 startActivity(intentAddEstudiante);
             }
         });
