@@ -1,6 +1,8 @@
 package com.example.attrecmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -14,6 +16,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.example.attrecmaster.adaptadores.ListAddEvaluacionAdapter;
 import com.example.attrecmaster.clases.Registro;
 import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.button.MaterialButton;
@@ -24,6 +27,7 @@ import java.lang.reflect.Type;
 import java.util.Calendar;
 
 public class AddEvaluacionActivity extends AppCompatActivity {
+    RecyclerView rvTipoEvaluacion;
     TextInputLayout InputLayoutFechaEvaluacion;
     TextInputEditText EditTextFechaEvaluacion;
     MaterialButton saveEvaluacionBtn;
@@ -37,6 +41,7 @@ public class AddEvaluacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_evaluacion);
 
+        rvTipoEvaluacion = findViewById(R.id.rvTipoEvaluacion);
         InputLayoutFechaEvaluacion = findViewById(R.id.InputLayoutFechaEvaluacion);
         EditTextFechaEvaluacion = findViewById(R.id.EditTextFechaEvaluacion);
         saveEvaluacionBtn = findViewById(R.id.saveEvaluacionBtn);
@@ -72,6 +77,10 @@ public class AddEvaluacionActivity extends AppCompatActivity {
             viewAnio4.setText("Año: "+registro1.getAnio());
             viewFacultad4.setText("Facultad: "+registro1.getFacultad());
         }
+
+        rvTipoEvaluacion.setLayoutManager(new LinearLayoutManager(this));
+        ListAddEvaluacionAdapter adapter = new ListAddEvaluacionAdapter(this, R.layout.activity_item_add_evaluacion, registroModelBDVer.mostrarEstudianteRegistro(id));
+        rvTipoEvaluacion.setAdapter(adapter);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
