@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.example.attrecmaster.clases.Asistencia;
 import com.example.attrecmaster.clases.Estudiante;
 import com.example.attrecmaster.clases.Registro;
 
@@ -126,5 +127,25 @@ public class registroModel extends DBConection {
         }
         cursorEstudiante.close();
         return listaEstudiantes;
+    }
+
+    public ArrayList<Asistencia> mostrarAsistenciasRegistro(int id){
+        DBConection conex = new DBConection(context);
+        SQLiteDatabase db = conex.getWritableDatabase();
+        Asistencia asistencia = null;
+        ArrayList<Asistencia> listaAsistencias = new ArrayList<>();
+        Cursor cursorAsistencia;
+        cursorAsistencia = db.rawQuery("SELECT * FROM registro_control rgc LEFT JOIN asistencia asis ON(rgc.idasistencia = asis.idasistencia) WHERE rgc.idregistro = "+ id + " AND rgc.idasistencia != NULL LIMIT 5", null);
+        if (cursorAsistencia.moveToFirst()){
+            do {
+                asistencia = new Asistencia();
+                asistencia.setIdasistencia(cursorAsistencia.getInt(5));
+                asistencia.setFecha(cursorAsistencia.getString(6));
+                asistencia.setEstado(cursorAsistencia.getString(7));
+                listaAsistencias.add(asistencia);
+            } while (cursorAsistencia.moveToNext());
+        }
+        cursorAsistencia.close();
+        return listaAsistencias;
     }
 }

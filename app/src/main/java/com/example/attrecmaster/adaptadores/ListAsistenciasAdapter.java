@@ -50,7 +50,7 @@ public class ListAsistenciasAdapter extends RecyclerView.Adapter<ListAsistencias
 
         public AsistenciasViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtFechaAsistencia = itemView.findViewById(R.id.txtFechaAsistencia);
+            txtFechaAsistencia = itemView.findViewById(R.id.txtFechaAsistencia2);
         }
     }
 }

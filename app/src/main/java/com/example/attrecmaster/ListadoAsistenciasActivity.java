@@ -1,6 +1,8 @@
 package com.example.attrecmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,11 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.attrecmaster.adaptadores.ListAsistenciasAdapter;
 import com.example.attrecmaster.clases.Registro;
 import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListadoAsistenciasActivity extends AppCompatActivity {
+    RecyclerView rvListadoAsistencias;
     TextView tvListadoAsistenciasInstancia, viewAsign2, viewGrupo2, viewAnio2, viewFacultad2;;
     FloatingActionButton fabAddAsistencias;
     Registro registro1;
@@ -26,6 +30,7 @@ public class ListadoAsistenciasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_asistencias);
 
+        rvListadoAsistencias = findViewById(R.id.rvListadoAsistencias);
         tvListadoAsistenciasInstancia = findViewById(R.id.tvListadoAsistenciasInstancia);
         viewAsign2 = findViewById(R.id.viewAsign2);
         viewGrupo2 = findViewById(R.id.viewGrupo2);
@@ -56,6 +61,10 @@ public class ListadoAsistenciasActivity extends AppCompatActivity {
             viewAnio2.setText("Año: "+registro1.getAnio());
             viewFacultad2.setText("Facultad: "+registro1.getFacultad());
         }
+
+        rvListadoAsistencias.setLayoutManager(new LinearLayoutManager(this));
+        ListAsistenciasAdapter adapter = new ListAsistenciasAdapter(this, R.layout.activity_item_asistencias, registroModelBDVer.mostrarAsistenciasRegistro(id));
+        rvListadoAsistencias.setAdapter(adapter);
 
         fabAddAsistencias.setOnClickListener(new View.OnClickListener() {
             @Override
