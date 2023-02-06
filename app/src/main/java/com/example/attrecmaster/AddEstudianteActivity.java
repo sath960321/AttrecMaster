@@ -70,6 +70,25 @@ public class AddEstudianteActivity extends AppCompatActivity {
             }
         });
 
+        insertEstudianteContinuarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!EditTextNombreEstudiante.getText().toString().equals("") || !EditTextCIEstudiante.getText().toString().equals("") || !EditTextSexoEstudiante.getText().toString().equals("")){
+                    registroModel modeldb = new registroModel(AddEstudianteActivity.this);
+                    long idEstudiante = modeldb.insertarEstudiante(EditTextNombreEstudiante.getText().toString(),EditTextCIEstudiante.getText().toString(), EditTextSexoEstudiante.getText().toString());
+                    long idRegistroControl = modeldb.insertarRegistroEstudiante(idEstudiante, idregistro);
+                    if (idEstudiante > 0 && idRegistroControl > 0){
+                        Toast.makeText(AddEstudianteActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
+                        Limpiar();
+                    } else {
+                        Toast.makeText(AddEstudianteActivity.this, "ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(AddEstudianteActivity.this, "DEBES LLENAR TODOS LOS CAMPOS", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
     private void Limpiar() {

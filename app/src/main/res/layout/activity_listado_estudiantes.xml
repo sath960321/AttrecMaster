@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     tools:context=".ListadoEstudiantesActivity">
 
 
@@ -89,12 +90,12 @@
         android:id="@+id/cardViewTitleEstudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="6dp"
         android:backgroundTint="@color/bluecard"
         android:foreground="@drawable/bluecardview"
         android:padding="12dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="8dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintTop_toBottomOf="@+id/cardViewRegistro">
 
@@ -123,12 +124,13 @@
         android:id="@+id/rvListadoEstudiantes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
         android:layout_marginTop="8dp"
-        tools:listitem="@layout/activity_item_estudiantes"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEstudiante" />
+        android:padding="5dp"
+        android:scrollX="1dp"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewTitleEstudiante"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/activity_item_estudiantes" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddEstudiantes"
