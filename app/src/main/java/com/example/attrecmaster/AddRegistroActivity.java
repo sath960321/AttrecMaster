@@ -31,6 +31,7 @@ public class AddRegistroActivity extends AppCompatActivity {
         EditTextAnio = findViewById(R.id.EditTextAnio);
         EditTextFacultad = findViewById(R.id.EditTextFacultad);
 
+
         insertRegistroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +46,8 @@ public class AddRegistroActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(AddRegistroActivity.this, "ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
                     }
+                } else {
+                    Toast.makeText(AddRegistroActivity.this, "DEBES LLENAR TODOS LOS CAMPOS", Toast.LENGTH_LONG).show();
                 }
             }
         });
