@@ -1,6 +1,8 @@
 package com.example.attrecmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -9,6 +11,8 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.example.attrecmaster.adaptadores.ListAddAsistenciasAdapter;
+import com.example.attrecmaster.adaptadores.ListEstudiantesAdapter;
 import com.example.attrecmaster.clases.Registro;
 import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.button.MaterialButton;
@@ -18,7 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.Calendar;
 
 public class AddAsistenciaActivity extends AppCompatActivity {
-
+    RecyclerView rvAddAsistencia;
     TextInputLayout InputLayoutFechaAsistencia;
     TextInputEditText EditTextFechaAsistencia;
     MaterialButton saveAsistenciaBtn;
@@ -31,6 +35,7 @@ public class AddAsistenciaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_asistencia);
 
+        rvAddAsistencia = findViewById(R.id.rvAddAsistencia);
         InputLayoutFechaAsistencia = findViewById(R.id.InputLayoutFechaAsistencia);
         EditTextFechaAsistencia = findViewById(R.id.EditTextFechaAsistencia);
         tvListadoAddAsistenciaInstancia = findViewById(R.id.tvListadoAddAsistenciaInstancia);
@@ -67,12 +72,16 @@ public class AddAsistenciaActivity extends AppCompatActivity {
             viewFacultad5.setText("Facultad: "+registro1.getFacultad());
         }
 
+        rvAddAsistencia.setLayoutManager(new LinearLayoutManager(this));
+        ListAddAsistenciasAdapter adapter = new ListAddAsistenciasAdapter(this, R.layout.activity_item_add_asistencia, registroModelBDVer.mostrarEstudianteRegistro(id));
+        rvAddAsistencia.setAdapter(adapter);
+
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        InputLayoutFechaAsistencia.setOnClickListener(new View.OnClickListener() {
+        InputLayoutFechaAsistencia.setEndIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(AddAsistenciaActivity.this, new DatePickerDialog.OnDateSetListener() {
