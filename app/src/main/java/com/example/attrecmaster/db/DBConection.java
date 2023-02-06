@@ -14,6 +14,18 @@ public class DBConection extends SQLiteOpenHelper {
 
     public static final String TABLE_REGISTRO = "registros";
 
+    public static final String TABLE_ESTUDIANTES = "estudiantes";
+
+    public static final String TABLE_ASISTENCIA = "asistencia";
+
+    public static final String TABLE_EVALUACION = "evaluacion";
+
+    public static final String TABLE_REGISTRO_CONTROL = "registro_control";
+
+    public static final String TABLE_ESTADO = "estado";
+
+    public static final String TABLE_TIPO = "tipo";
+
     public DBConection(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
     }
@@ -26,11 +38,37 @@ public class DBConection extends SQLiteOpenHelper {
                 "grupo TEXT NOT NULL," +
                 "anio TEXT NOT NULL," +
                 "facultad TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTUDIANTES +  "(" +
+                "idestudiante INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombre TEXT NOT NULL," +
+                "ci TEXT NOT NULL," +
+                "sexo TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ASISTENCIA +  "(" +
+                "idasistencia INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "fecha TEXT NOT NULL," +
+                "estado TEXT NOT NULL," +
+                "anio TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_EVALUACION +  "(" +
+                "idevaluacion INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "fecha TEXT NOT NULL," +
+                "tipo TEXT NOT NULL," +
+                "valor TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTADO +  "(" +
+                "idestado INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "estado TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_TIPO +  "(" +
+                "id_tipoEvaluacion INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tipo TEXT NOT NULL)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_REGISTRO);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ESTUDIANTES);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ASISTENCIA);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_EVALUACION);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ESTADO);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_TIPO);
         onCreate(sqLiteDatabase);
     }
 }
