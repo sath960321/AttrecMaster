@@ -4,24 +4,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvRegistroAddEvaluacion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="12dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_marginTop="4dp"
                 android:background="@drawable/rectangle_utilities">
                 <TextView
                     android:id="@+id/idenEstu1"
@@ -36,7 +32,7 @@
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginLeft="4dp">
@@ -44,7 +40,6 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="6dp"
                     android:backgroundTint="@color/redcard"
                     app:cardCornerRadius="16dp">
 
@@ -52,7 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingRight="64dp">
+                        android:paddingRight="99dp">
 
                         <LinearLayout
                             android:layout_width="41dp"
@@ -78,7 +73,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
-                            android:layout_marginTop="6dp"
                             android:paddingBottom="6dp"
                             android:orientation="vertical">
 
@@ -117,8 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="6dp">
+                    android:layout_marginLeft="6dp">
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/InputLayoutValorEvaluacion"
                         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
@@ -137,6 +130,5 @@
             </LinearLayout>
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
