@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_marginTop="8dp"
-        android:hint="Fecha Evaluación"
+        android:hint="Fecha Asistencia"
         android:foreground="@drawable/bluecardview"
         app:endIconDrawable="@drawable/ic_calendar"
         app:endIconMode="custom"
