@@ -1,8 +1,11 @@
 package com.example.attrecmaster.adaptadores;
 
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +22,7 @@ import com.example.attrecmaster.clases.Registro;
 import java.util.ArrayList;
 
 public class ListRegistroAdapter extends RecyclerView.Adapter<ListRegistroAdapter.RegistroViewHolder> {
-
+    Dialog dialog;
     Context context;
     int resourcelayout;
     ArrayList<Registro> listaRegistro;
@@ -75,10 +78,19 @@ public class ListRegistroAdapter extends RecyclerView.Adapter<ListRegistroAdapte
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
+                    dialog  = new Dialog(view.getRootView().getContext());
+
+                    OpenDialogRegistro();
                     Toast.makeText(context, "FUNCIONA EL PRESIONADO", Toast.LENGTH_LONG).show();
-                    return false;
+                    return true;
                 }
             });
         }
+    }
+
+    private void OpenDialogRegistro() {
+        dialog.setContentView(R.layout.registro_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
     }
 }
