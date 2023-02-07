@@ -74,12 +74,48 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewEvaluaciones"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/cardViewAsistencia"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/bluecard"
+        android:foreground="@drawable/bluecardview"
+        android:padding="12dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@id/cardViewEvaluaciones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewRegistro">
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="end|bottom"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_icono_boton_de_asistencia" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Asistencia"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEvaluaciones"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/bluecard"
         android:foreground="@drawable/bluecardview"
         android:padding="12dp"
@@ -96,9 +132,9 @@
             android:padding="12dp">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="121dp"
-                android:src="@drawable/ic_icono_boton_evaluacion"/>
+                android:layout_width="160dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_icono_boton_evaluacion" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -110,65 +146,33 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewAsistencia"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/bluecard"
-        android:foreground="@drawable/bluecardview"
-        android:padding="12dp"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewRegistro">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:orientation="vertical"
-            android:padding="12dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="121dp"
-                android:src="@drawable/ic_icono_boton_de_asistencia"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Asistencia"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewListado"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/bluecard"
         android:foreground="@drawable/bluecardview"
         android:padding="12dp"
         app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@id/cardViewReporte"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewAsistencia">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
+            android:layout_height="170dp"
+            android:layout_gravity="top|center"
             android:orientation="vertical"
             android:padding="12dp">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="121dp"
-                android:src="@drawable/ic_icono_boton_de_listado_de_estudiantes"/>
+                android:layout_height="113dp"
+                android:src="@drawable/ic_icono_boton_de_listado_de_estudiantes" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -182,9 +186,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewReporte"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/bluecard"
         android:foreground="@drawable/bluecardview"
         android:padding="12dp"
@@ -203,8 +208,8 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="121dp"
-                android:src="@drawable/ic_icono_boton_de_reporte"/>
+                android:layout_height="110dp"
+                android:src="@drawable/ic_icono_boton_de_reporte" />
 
             <TextView
                 android:layout_width="match_parent"
