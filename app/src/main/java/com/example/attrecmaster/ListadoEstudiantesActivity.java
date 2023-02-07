@@ -20,7 +20,7 @@ import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListadoEstudiantesActivity extends AppCompatActivity {
-    TextView tvListadoEstudiantesInstancia, viewAsign1, viewGrupo1, viewAnio1, viewFacultad1;
+    TextView viewAsign1, viewGrupo1, viewAnio1, viewFacultad1;
     FloatingActionButton fabAddEstudiantes;
     RecyclerView rvListadoEstudiantes;
     Registro registro1;
@@ -32,7 +32,6 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_estudiantes);
 
-        tvListadoEstudiantesInstancia = findViewById(R.id.tvListadoEstudiantesInstancia);
         viewAsign1 = findViewById(R.id.viewAsign1);
         viewGrupo1 = findViewById(R.id.viewGrupo1);
         viewAnio1 = findViewById(R.id.viewAnio1);
@@ -47,7 +46,6 @@ public class ListadoEstudiantesActivity extends AppCompatActivity {
             } else {
                 id = extras.getInt("ID");
                 Integer valorId = extras.getInt("ID");
-                tvListadoEstudiantesInstancia.setText(valorId.toString());
             }
         } else {
             id = (int) savedInstanceState.getSerializable("ID");

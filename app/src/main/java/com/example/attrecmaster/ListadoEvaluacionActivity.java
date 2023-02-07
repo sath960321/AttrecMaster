@@ -12,7 +12,7 @@ import com.example.attrecmaster.db.registroModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListadoEvaluacionActivity extends AppCompatActivity {
-    TextView tvListadoEvaluacionInstancia, viewAsign3, viewGrupo3, viewAnio3, viewFacultad3;
+    TextView viewAsign3, viewGrupo3, viewAnio3, viewFacultad3;
     FloatingActionButton fabAddEvaluacion;
     Registro registro1;
     int id = 0;
@@ -22,7 +22,6 @@ public class ListadoEvaluacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_evaluacion);
 
-        tvListadoEvaluacionInstancia = findViewById(R.id.tvListadoEvaluacionInstancia);
         viewAsign3 = findViewById(R.id.viewAsign3);
         viewGrupo3 = findViewById(R.id.viewGrupo3);
         viewAnio3 = findViewById(R.id.viewAnio3);
@@ -37,7 +36,6 @@ public class ListadoEvaluacionActivity extends AppCompatActivity {
             } else {
                 id = extras.getInt("ID");
                 Integer valorId = extras.getInt("ID");
-                tvListadoEvaluacionInstancia.setText(valorId.toString());
             }
         } else {
             id = (int) savedInstanceState.getSerializable("ID");

@@ -6,34 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".AddAsistenciaActivity">
 
-
-
-    <TextView
-        android:id="@+id/tvListadoAddAsistenciaInstancia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Instancia"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewRegistroAddAsistencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
         android:backgroundTint="@color/bluecard"
         android:foreground="@drawable/bluecardview"
         android:padding="12dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvListadoAddAsistenciaInstancia">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"

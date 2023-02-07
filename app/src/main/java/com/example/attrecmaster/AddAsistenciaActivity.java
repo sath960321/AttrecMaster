@@ -29,7 +29,7 @@ public class AddAsistenciaActivity extends AppCompatActivity {
     TextInputLayout InputLayoutFechaAsistencia;
     TextInputEditText EditTextFechaAsistencia;
     MaterialButton saveAsistenciaBtn;
-    TextView tvListadoAddAsistenciaInstancia, viewAsign5, viewGrupo5, viewAnio5, viewFacultad5;
+    TextView viewAsign5, viewGrupo5, viewAnio5, viewFacultad5;
     Registro registro1;
     int id = 0;
 
@@ -41,7 +41,6 @@ public class AddAsistenciaActivity extends AppCompatActivity {
         rvAddAsistencia = findViewById(R.id.rvAddAsistencia);
         InputLayoutFechaAsistencia = findViewById(R.id.InputLayoutFechaAsistencia);
         EditTextFechaAsistencia = findViewById(R.id.EditTextFechaAsistencia);
-        tvListadoAddAsistenciaInstancia = findViewById(R.id.tvListadoAddAsistenciaInstancia);
         viewAsign5 = findViewById(R.id.viewAsign5);
         viewGrupo5 = findViewById(R.id.viewGrupo5);
         viewAnio5 = findViewById(R.id.viewAnio5);
@@ -58,7 +57,6 @@ public class AddAsistenciaActivity extends AppCompatActivity {
             } else {
                 id = extras.getInt("ID");
                 Integer valorId = extras.getInt("ID");
-                tvListadoAddAsistenciaInstancia.setText(valorId.toString());
             }
         } else {
             id = (int) savedInstanceState.getSerializable("ID");

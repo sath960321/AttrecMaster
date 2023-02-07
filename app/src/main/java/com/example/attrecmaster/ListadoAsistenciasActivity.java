@@ -20,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListadoAsistenciasActivity extends AppCompatActivity {
     RecyclerView rvListadoAsistencias;
-    TextView tvListadoAsistenciasInstancia, viewAsign2, viewGrupo2, viewAnio2, viewFacultad2;;
+    TextView viewAsign2, viewGrupo2, viewAnio2, viewFacultad2;;
     FloatingActionButton fabAddAsistencias;
     Registro registro1;
     int id = 0;
@@ -31,7 +31,6 @@ public class ListadoAsistenciasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listado_asistencias);
 
         rvListadoAsistencias = findViewById(R.id.rvListadoAsistencias);
-        tvListadoAsistenciasInstancia = findViewById(R.id.tvListadoAsistenciasInstancia);
         viewAsign2 = findViewById(R.id.viewAsign2);
         viewGrupo2 = findViewById(R.id.viewGrupo2);
         viewAnio2 = findViewById(R.id.viewAnio2);
@@ -46,7 +45,6 @@ public class ListadoAsistenciasActivity extends AppCompatActivity {
             } else {
                 id = extras.getInt("ID");
                 Integer valorId = extras.getInt("ID");
-                tvListadoAsistenciasInstancia.setText(valorId.toString());
             }
         } else {
             id = (int) savedInstanceState.getSerializable("ID");

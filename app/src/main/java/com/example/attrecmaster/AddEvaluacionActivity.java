@@ -32,7 +32,7 @@ public class AddEvaluacionActivity extends AppCompatActivity {
     TextInputEditText EditTextFechaEvaluacion;
     MaterialButton saveEvaluacionBtn;
     AutoCompleteTextView EditTextTipoEvaluacion;
-    TextView tvListadoAddEvaluacionInstancia, viewAsign4, viewGrupo4, viewAnio4, viewFacultad4;
+    TextView viewAsign4, viewGrupo4, viewAnio4, viewFacultad4;
     Registro registro1;
     int id = 0;
 
@@ -46,7 +46,6 @@ public class AddEvaluacionActivity extends AppCompatActivity {
         EditTextFechaEvaluacion = findViewById(R.id.EditTextFechaEvaluacion);
         saveEvaluacionBtn = findViewById(R.id.saveEvaluacionBtn);
         EditTextTipoEvaluacion = findViewById(R.id.EditTextTipoEvaluacion);
-        tvListadoAddEvaluacionInstancia = findViewById(R.id.tvListadoAddEvaluacionInstancia);
         viewAsign4 = findViewById(R.id.viewAsign4);
         viewGrupo4 = findViewById(R.id.viewGrupo4);
         viewAnio4 = findViewById(R.id.viewAnio4);
@@ -61,7 +60,6 @@ public class AddEvaluacionActivity extends AppCompatActivity {
             } else {
                 id = extras.getInt("ID");
                 Integer valorId = extras.getInt("ID");
-                tvListadoAddEvaluacionInstancia.setText(valorId.toString());
             }
         } else {
             id = (int) savedInstanceState.getSerializable("ID");

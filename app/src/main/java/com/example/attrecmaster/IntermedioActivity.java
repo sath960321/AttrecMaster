@@ -17,7 +17,7 @@ import com.example.attrecmaster.db.registroModel;
 
 public class IntermedioActivity extends AppCompatActivity {
     CardView cardViewAsistencia, cardViewEvaluaciones, cardViewListado, cardViewReporte;
-    TextView textView, viewAsign, viewGrupo, viewAnio, viewFacultad;
+    TextView viewAsign, viewGrupo, viewAnio, viewFacultad;
     Registro registro1;
     int id = 0;
 
@@ -26,7 +26,6 @@ public class IntermedioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intermedio);
 
-        textView = findViewById(R.id.textView);
         viewAsign = findViewById(R.id.viewAsign);
         viewGrupo = findViewById(R.id.viewGrupo);
         viewAnio = findViewById(R.id.viewAnio);
@@ -44,7 +43,6 @@ public class IntermedioActivity extends AppCompatActivity {
             } else {
                 id = extras.getInt("ID");
                 Integer valorId = extras.getInt("ID");
-                textView.setText(valorId.toString());
             }
         } else {
             id = (int) savedInstanceState.getSerializable("ID");
