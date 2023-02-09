@@ -117,9 +117,11 @@ public class registroModel extends DBConection {
         cursorEstudiante = db.rawQuery("SELECT rgc.idregistroControl, rgc.idregistro, es.idestudiante, es.nombre, es.ci, es.sexo FROM registro_control rgc LEFT JOIN estudiantes es ON(rgc.idestudiante = es.idestudiante) WHERE rgc.idregistro = "+ id + " LIMIT 5", null);
         if (cursorEstudiante.moveToFirst()){
             do {
+                String strnombre = cursorEstudiante.getString(3);
+                String[] outputstr = strnombre.split(" ");
                 estudiante = new Estudiante();
                 estudiante.setIdestudiante(cursorEstudiante.getInt(2));
-                estudiante.setNombre(cursorEstudiante.getString(3));
+                estudiante.setNombre(outputstr[0]);
                 estudiante.setCi(cursorEstudiante.getString(4));
                 estudiante.setSexo(cursorEstudiante.getString(5));
                 listaEstudiantes.add(estudiante);

@@ -77,6 +77,8 @@ public class AddAsistenciaActivity extends AppCompatActivity {
         ListAddAsistenciasAdapter adapter = new ListAddAsistenciasAdapter(this, R.layout.activity_item_add_asistencia, registroModelBDVer.mostrarEstudianteRegistro(id));
         rvAddAsistencia.setAdapter(adapter);
 
+
+
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
