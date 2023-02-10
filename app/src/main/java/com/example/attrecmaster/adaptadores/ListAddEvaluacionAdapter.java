@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +41,8 @@ public class ListAddEvaluacionAdapter extends RecyclerView.Adapter<ListAddEvalua
         holder.txtNombre1.setText(listaEstudianteEvaluacion.get(position).getNombre());
         holder.txtCI1.setText(listaEstudianteEvaluacion.get(position).getCi());
         holder.txtSexo1.setText(listaEstudianteEvaluacion.get(position).getSexo());
+
+        holder.EditTextValorEvaluacion.setAdapter(holder.CargarSpinnerEval());
     }
 
     @Override
@@ -48,12 +52,24 @@ public class ListAddEvaluacionAdapter extends RecyclerView.Adapter<ListAddEvalua
 
     public class AddEvaluacionViewHolder extends RecyclerView.ViewHolder {
         TextView idenEstu1, txtNombre1, txtCI1, txtSexo1;
+        AutoCompleteTextView EditTextValorEvaluacion;
         public AddEvaluacionViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
             idenEstu1 = itemView.findViewById(R.id.idenEstu1);
             txtNombre1 = itemView.findViewById(R.id.txtNombre1);
             txtCI1 = itemView.findViewById(R.id.txtCI1);
             txtSexo1 = itemView.findViewById(R.id.txtSexo1);
+            EditTextValorEvaluacion = itemView.findViewById(R.id.EditTextValorEvaluacion);
+        }
+        public ArrayAdapter<Integer> CargarSpinnerEval(){
+            ArrayList<Integer> cargarEval = new ArrayList<>();
+            cargarEval.add(2);
+            cargarEval.add(3);
+            cargarEval.add(4);
+            cargarEval.add(5);
+            ArrayAdapter<Integer> adapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, cargarEval);
+            return adapter;
         }
     }
 }
