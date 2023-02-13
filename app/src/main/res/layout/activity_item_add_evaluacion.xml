@@ -114,7 +114,6 @@
                     android:layout_marginLeft="6dp">
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/InputLayoutValorEvaluacion"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingRight="12dp">
@@ -125,6 +124,7 @@
                             android:layout_height="match_parent"
                             android:paddingRight="12dp"
                             android:text="0"
+                            android:textAlignment="center"
                             android:foreground="@drawable/redcardview" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>

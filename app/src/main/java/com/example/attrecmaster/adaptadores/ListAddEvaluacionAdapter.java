@@ -42,7 +42,6 @@ public class ListAddEvaluacionAdapter extends RecyclerView.Adapter<ListAddEvalua
         holder.txtCI1.setText(listaEstudianteEvaluacion.get(position).getCi());
         holder.txtSexo1.setText(listaEstudianteEvaluacion.get(position).getSexo());
 
-        holder.EditTextValorEvaluacion.setAdapter(holder.CargarSpinnerEval());
     }
 
     @Override
@@ -62,14 +61,6 @@ public class ListAddEvaluacionAdapter extends RecyclerView.Adapter<ListAddEvalua
             txtSexo1 = itemView.findViewById(R.id.txtSexo1);
             EditTextValorEvaluacion = itemView.findViewById(R.id.EditTextValorEvaluacion);
         }
-        public ArrayAdapter<Integer> CargarSpinnerEval(){
-            ArrayList<Integer> cargarEval = new ArrayList<>();
-            cargarEval.add(2);
-            cargarEval.add(3);
-            cargarEval.add(4);
-            cargarEval.add(5);
-            ArrayAdapter<Integer> adapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, cargarEval);
-            return adapter;
-        }
+
     }
 }
